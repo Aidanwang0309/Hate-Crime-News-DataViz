@@ -14,27 +14,74 @@
     width: 50%;
       /*top: 600px;*/
     }
+
+    .slider
+{
+    width: 200px;
+}
+
+      .d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 22px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+  /* Style northward tooltips differently */
+  .d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+
+  /*#word-info {
+    width=20%;
+    height=60%;
+    position=relative;
+    top=100;
+    left=10;
+    background: rgba(76, 175, 80, 0.3);
+    z-index: 1000;
+  }*/
   </style>
 </head>
 
 <body>
   <!-- <nav id="nav" class="navbar navbar-default" role="navigation"></nav> -->
   <div class="container">
-    <h3>Word Cloud</h3>
+    <h2>Hate Crime News Report</h2>
+    <h3>Word Cloud Data Visualization, 02/2017 - 08/2017 </h3>
+<h1>   </h1>
     <div id="word-cloud" align="center">
       <svg></svg>
     </div>
+
   </div>
-  <!-- <div>
-    <button onclick="changeJson()">Change</button>
+  <!-- <div id="word-info">
+    sadf
   </div> -->
   <div id="sliderContainer" >
-    <input id="timeslide"  type="range" min="0" max="6" value="0" step="1" /><br>
-    <span id="range">Feburary</span>
+    <input class="slider" id="timeslide"  background="black"  width="100px" type="range" min="0" max="6" value="0" step="1" /><br>
+    <span id="range" style="font-size:30px">Feburary</span>
   </div>
-  <script type="text/javascript" src="d3.v3.min.js"></script>
-  <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
-  <!-- <script type="text/javascript" src="cloud.min.js"></script> -->
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <script src="http://d3js.org/d3.v3.js"></script>
+  <script type="text/javascript" src="d3.tip.v0.6.3.js"></script>
   <script type="text/javascript" src="d3.layout.cloud.js"></script>
   <script type="text/javascript" src="drawWordCloud.js"></script>
 </body>
