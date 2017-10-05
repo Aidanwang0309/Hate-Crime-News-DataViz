@@ -1,6 +1,6 @@
 var inputValue = null;
 var month = ["Feb","Mar","Apr","May","Jun","Jul","Aug"];
-var monthName = ["Feburary","March","April","May","June","July","August"];
+var monthName = ["Feburary (news count: 150)","March (news count: 599)","April (news count: 588)","May (news count: 334)","June (news count: 338)","July (news count: 477)","August (news count: 177)"];
 
 // when the input range changes update the value
 d3.select("#timeslide").on("input", function() {
@@ -11,7 +11,7 @@ d3.select("#timeslide").on("input", function() {
 function update(value) {
     document.getElementById("range").innerHTML=monthName[value];
     inputValue = month[value];
-    console.log(inputValue);
+    console.log(monthName[value]);
     changeJson(inputValue);
     // d3.selectAll(".incident")
     //     .attr("fill", dateMatch);
@@ -25,7 +25,7 @@ var width = 1050,
 // var width = winWidth*0.7,
 //     height = width*0.6;
 
-var fill = d3.scale.category10();
+var fill = d3.scale.category20();
 
 
 d3.json('FebKW.json',function(data){
