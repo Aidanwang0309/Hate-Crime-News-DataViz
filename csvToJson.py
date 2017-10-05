@@ -11,12 +11,12 @@ jsonKW=[];
 
 
 
-with open(path+'Aug.csv') as fin:
+with open(path+'Mar.csv') as fin:
     csvin = csv.reader(fin)
     header = next(csvin, [])
-    json.dump(dict(zip(header, zip(*csvin))),open("Aug.json","w"),indent=4)
+    json.dump(dict(zip(header, zip(*csvin))),open("Mar.json","w"),indent=4)
 
-jsonfile=open("Aug.json","r")
+jsonfile=open("Mar.json","r")
 
 
 with jsonfile as data_file:
@@ -80,11 +80,15 @@ with jsonfile as data_file:
 #remove the word from the cloud if frequency is too low
 newJson=[]
 newJson = [x for x in jsonKW if len(x["dates"])>=5 ]
+# or x["word"]!="crime" or x["word"]!="crimes"
+newJson = [x for x in newJson if (x["word"]!="hate")]
+newJson = [x for x in newJson if (x["word"]!="crime")]
+newJson = [x for x in newJson if (x["word"]!="crimes")]
 for element in newJson:
     element["count"]=len(element["dates"])
 
 print len(newJson)
 
 
-with open('AugKW.json', 'w') as fout:
+with open('MarKW.json', 'w') as fout:
     json.dump(newJson, fout,indent=4)
