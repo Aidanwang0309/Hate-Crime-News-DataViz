@@ -11,12 +11,12 @@ jsonKW=[];
 
 
 
-with open(path+'Mar.csv') as fin:
+with open(path+'Jun.csv') as fin:
     csvin = csv.reader(fin)
     header = next(csvin, [])
-    json.dump(dict(zip(header, zip(*csvin))),open("Mar.json","w"),indent=4)
+    json.dump(dict(zip(header, zip(*csvin))),open("Jun.json","w"),indent=4)
 
-jsonfile=open("Mar.json","r")
+jsonfile=open("Jun.json","r")
 
 
 with jsonfile as data_file:
@@ -90,5 +90,5 @@ for element in newJson:
 print len(newJson)
 
 
-with open('MarKW.json', 'w') as fout:
+with open('JunKW.json', 'w') as fout:
     json.dump(newJson, fout,indent=4)
