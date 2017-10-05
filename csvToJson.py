@@ -79,7 +79,7 @@ with jsonfile as data_file:
 
 #remove the word from the cloud if frequency is too low
 newJson=[]
-newJson = [x for x in jsonKW if len(x["dates"])>=4 ]
+newJson = [x for x in jsonKW if len(x["dates"])>=5 ]
 for element in newJson:
     element["count"]=len(element["dates"])
 
